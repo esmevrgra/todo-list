@@ -15,9 +15,22 @@ body {
   background: url(./images/pink-blue.jpg) no-repeat center center/cover;
 }
 
+/* --- Confetti Fix: Ensure Canvas is Full-Screen and On Top --- */
+canvas {
+    z-index: 999999 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+/* ----------------------------------------------------------- */
+
 .empty-image {
-  width: 150px;
+  width: 190px;
   height: auto;
+  margin-top: -33px; 
 }
 
 .container {
@@ -297,5 +310,4 @@ body {
   #task-list li{
     font-size: 1rem;
   }
-
 }

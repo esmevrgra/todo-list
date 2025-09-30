@@ -8,42 +8,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressNumbers = document.getElementById('numbers');
   
     const Confetti = () => {
-        // --- RESPONSIVE CONFETTI LOGIC ADDED HERE ---
-        const isMobile = window.innerWidth < 600; // Check against your CSS media query breakpoint
+        // --- RESPONSIVE CONFETTI LOGIC ---
+        const isMobile = window.innerWidth < 600; 
         
         // Scaling factors based on screen size
         const particleScalar = isMobile ? 0.8 : 1.2; 
         const starCount = isMobile ? 30 : 40;
         const circleCount = isMobile ? 5 : 10;
-        const startVelocity = isMobile ? 20 : 30; // Slower velocity on mobile
+        const startVelocity = isMobile ? 20 : 30;
         
         const defaults = {
             spread: 360,
             ticks: 50,
             gravity: 0,
             decay: 0.94,
-            startVelocity: startVelocity, // Use dynamic velocity
+            startVelocity: startVelocity, 
             shapes: ["star"],
             colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
-            origin: { x: 0.5, y: 0.5 }, // Ensure confetti is centered
+            
+            // Adjusted origin to center horizontally (0.5) and slightly
+            // above the vertical center (0.45) to match the app card's position.
+            origin: { x: 0.5, y: 0.45 }, 
         };
   
         function shoot() {
             confetti({
                 ...defaults,
                 particleCount: starCount,
-                scalar: particleScalar, // Use dynamic scalar
+                scalar: particleScalar,
                 shapes: ["star"],
             });
   
             confetti({
                 ...defaults,
                 particleCount: circleCount,
-                scalar: particleScalar * 0.75, // Scale circles proportionally
+                scalar: particleScalar * 0.75,
                 shapes: ["circle"],
             });
         }
-        // ---------------------------------------------
+        // ---------------------------------
   
         setTimeout(shoot, 0);
         setTimeout(shoot, 100);
