@@ -46,6 +46,8 @@ body {
 
 .todo-app h1 {
   font-size: 2rem;
+ /* color: #fff; */
+
 }
 
 .input-area {
@@ -67,23 +69,23 @@ body {
   -webkit-backdrop-filter: blur(10px); /* For Safari support */
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  color: #dbdbdb;
+  color: black;
 }
 
 .input-area input::placeholder { /* Standard syntax */
-  color: #bcbcbc;
+  color: black;
 }
 
 .input-area input::-webkit-input-placeholder { /* Chrome, Safari, Opera */
-  color: #bcbcbc;
+  color: black;
 }
 
 .input-area input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #bcbcbc;
+  color: black;
 }
 
 .input-area input::-ms-input-placeholder { /* Microsoft Edge */
-  color: #bcbcbc;
+  color: black;
 }
 
 .input-area button {
@@ -91,7 +93,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-left: 50%;
-  color: #fff;
+  color: black;
   font-size: 1.1rem;
   background: rgba(255, 195, 209, 0.3);
   border: 2px solid rgba(255, 255, 255, 0, 10);
@@ -101,13 +103,14 @@ body {
 
 .input-area button:hover {
   transform: scale(1.1);
-  background: #efcbe1;
+  background: #a5b7e7;
 }
 
-..todos-container {
+.todos-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 #task-list {
