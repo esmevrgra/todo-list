@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () =>
     ('add-task-btn');
   const taskList = document.getElementById
     ('task-list');
-  const bunny = Document.querySelector('.images/bunny');
+    const bunny = document.querySelector('.empty-image');
 
   const toggleEmptyState = () => 
   {
