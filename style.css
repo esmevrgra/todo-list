@@ -32,6 +32,7 @@ body {
 .todo-app {
   width: 100%;
   max-width: 400px;
+  height: 500px;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -99,7 +100,9 @@ body {
   color: white;
   font-size: 1.1rem;
   background: rgba(255, 195, 209, 0.3);
-  border: 2px solid rgba(95, 64, 64, 0.18);
+  border: 3px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
   cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 50%;
@@ -114,6 +117,7 @@ body {
 }
 
 .todos-container {
+  /*width: 100%;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,4 +178,37 @@ body {
   flex: 1;
   margin-left: 10px;
   word-wrap: break-word;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.task-buttons button {
+  background: rgba(255, 194, 209, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2 ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-buttons button:hover {
+  transform: scale(1.2);
+}
+
+.task-buttons .edit-btn {
+  background: #c783c6;
+}
+
+.task-buttons .delete-btn {
+  background: #2a2a3a;
 }
