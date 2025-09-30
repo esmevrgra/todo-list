@@ -8,14 +8,24 @@ document.addEventListener('DOMContentLoaded', () =>
       ('task-list');
     const bunny = document.querySelector('.empty-image');
     const todosContainer = document.querySelector
-      ('.todos-container')
+      ('.todos-container');
+    const progressBar = document.getElementById('progress');
+    const progressNumbers = document.getElementById('numbers');
   
     const toggleEmptyState = () => {
       bunny.style.display = taskList.children.length === 0 ? 'block' : 'none';
       todosContainer.style.width = taskList.children.length > 0 ? '100%' : '50%';
     };
     
-    
+    const updateProgress = (checkCompletion = true) => {
+      const totalTasks = taskList.children.length;
+      const completedTasks = taskList.querySelectorAll('.checkbox:checked').length;
+
+      progressBar.style.width = totalTasks ? `${(completedTasks / totalTasks) * 100}%` :
+        '0%';
+      progressNumbers.textContent = `${completedTasks} / ${totalTasks}`
+    };
+
     const addTask = (event) => {
   
       if (event && event.preventDefault) { 
@@ -48,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () =>
         editBtn.disabled = isChecked;
         editBtn.style.opacity = isChecked ? '0.5' : '1';
         editBtn.style.pointerEvents = isChecked ? 'none' : 'auto';
+        updateProgress();
       });
   
   
@@ -56,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () =>
           taskInput.value = li.querySelector('span').textContent;
           li.remove();
           toggleEmptyState();
+          updateProgress(false);
         }
       });
   
@@ -63,11 +75,13 @@ document.addEventListener('DOMContentLoaded', () =>
       li.querySelector('.delete-btn').addEventListener('click', () => {
         li.remove();
         toggleEmptyState();
+        updateProgress();
       })
   
       taskList.appendChild(li);
       taskInput.value = '';
       toggleEmptyState();
+      updateProgress(); 
     };
     
     addTaskBtn.addEventListener('click', addTask); 
@@ -79,4 +93,6 @@ document.addEventListener('DOMContentLoaded', () =>
         addTask(e); 
       }
     })
+    
+    updateProgress(); 
   });

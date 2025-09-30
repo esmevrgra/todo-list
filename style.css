@@ -73,7 +73,7 @@ body {
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: #c783c6;
+  background: #d8b1f2;
   border: white;
   border-radius: 50%;
   color: white; 
@@ -213,7 +213,7 @@ body {
 }
 
 #task-list li .checkbox:checked {
-  background: rgb(230, 192, 255);
+  background: #b1caf2;
   transform: scale(1.1);
 }
 
@@ -264,7 +264,7 @@ body {
 }
 
 .task-buttons .edit-btn {
-  background: #c783c6;
+  background: #d8b1f2;
 }
 
 .task-buttons .delete-btn {
