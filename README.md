@@ -1,2 +1,2 @@
 # weather
-Making a weather project!
+Making a to-do list project!
