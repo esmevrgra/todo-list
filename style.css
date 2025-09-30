@@ -270,3 +270,32 @@ body {
 .task-buttons .delete-btn {
   background: #2a2a3a;
 }
+
+/*media queries*/
+
+@media (max-width: 600px) {
+  .container{
+    margin: 0 20px;
+    padding: 0 10px;
+  }
+
+  .todo-app{
+    padding: 1.5rem;
+    gap: 20px;
+  }
+
+  #numbers {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+  }
+
+  .input-area input{
+    font-size: 1rem;
+  }
+
+  #task-list li{
+    font-size: 1rem;
+  }
+
+}
